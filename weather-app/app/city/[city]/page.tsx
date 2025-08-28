@@ -14,6 +14,7 @@ interface WeatherData {
   weather: { description: string; icon: string }[];
 }
 
+// Város koordináták lekérése API-ból 
 async function getCoordinates(city: string): Promise<GeoData> {
   const res = await fetch(
     `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${process.env.OPENWEATHER_API_KEY}`,
@@ -32,6 +33,7 @@ async function getCoordinates(city: string): Promise<GeoData> {
   return data[0];
 }
 
+// Időjárás adatok lekérése API-ból
 async function getWeather(lat: number, lon: number): Promise<WeatherData> {
   const res = await fetch(
     `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${process.env.OPENWEATHER_API_KEY}&units=metric&lang=hu`,
