@@ -9,6 +9,7 @@ Next.js 15 alkalmazás, amely a megadott város időjárását jeleníti meg az 
 
 git clone <repo-url>
 cd <repo-folder>
+git checkout release
 
 ```
 
